@@ -54,6 +54,17 @@ public class AlienController : MonoBehaviour
         return hit.collider != null;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Coin"))
+        {
+            Destroy(collision.gameObject);
+        }
+
+
+    }
+
+
     private void OnDrawGizmos()
     {
         // Visualize the ground detection ray in the editor
